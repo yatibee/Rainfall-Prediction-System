@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainy Day</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ----------------- Body ----------------- */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #bbdefb, #64b5f6); /* soft to deeper blue */
+      color: #1a237e; /* dark blue text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    /* ----------------- Header ----------------- */
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #0d47a1; /* deep blue */
+    }
+
+    /* ----------------- Image Container ----------------- */
+    .image-container {
+      width: 90%;
+      max-width: 600px;
+      margin: 1rem 0;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
+
+    /* ----------------- Section / Caption ----------------- */
+    section {
+      margin-top: 2rem;
+      max-width: 700px;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: #0d47a1; /* dark blue */
+    }
+
+    section span {
+      font-style: italic;
+      font-weight: 700;
+      color: #1477c7; /* lighter blue accent */
+    }
+
+    /* ----------------- Responsive ----------------- */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RAINY DAY</h1>
+  </header>
+
+  <main>
+    <div class="image-container">
+      <img src="{{ url_for('static', filename='rainy.jpg') }}" alt="Rainy Day">
+    </div>
+
+    <section>
+      <h2>
+        Going to be a <span>Rainy Day</span>. 
+        So enjoy yourselves with a warm cup of coffee ☕ and a cozy snack 🍲.
+       </h2>
+    </section>
+  </main>
+</body>
+</html>

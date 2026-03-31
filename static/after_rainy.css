@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, hsl(210, 80%, 45%), hsl(195, 70%, 60%));
+    /* HSL shades of blue: darker to lighter */
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* good contrast on blue background */
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-top: 1.5rem;
+    color: #e0f7fa; /* light cyan for slight highlight */
+}
+
+h2 {
+    font-size: 2rem; /* fixed spacing */
+    font-weight: bold;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+    color: #b2ebf2; /* slightly lighter blue for contrast */
+}
