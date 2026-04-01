@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.8)  1 APR 2026 22:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.8)  1 APR 2026 22:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -819,13 +819,13 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 Here is how much of TeX's memory you used:
  25868 strings out of 467525
  518742 string characters out of 5423210
- 923939 words of memory out of 5000000
+ 923950 words of memory out of 5000000
  54246 multiletter control sequences out of 15000+600000
  641996 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,472b,1058s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on presentation.pdf (9 pages, 165984 bytes).
+Output written on presentation.pdf (9 pages, 166184 bytes).
 PDF statistics:
  218 PDF objects out of 1000 (max. 8388607)
  128 compressed objects within 2 object streams

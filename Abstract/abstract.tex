@@ -1,0 +1,27 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\onehalfspacing
+\pagenumbering{gobble}
+
+\title{\textbf{Weather Forecasting Using Historical Data Analysis}}
+\author{Yati Singh \\ Roll No.: E23CSEU1058 \\ CSET 431: Special Topics in Computer Science}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\textbf{Abstract}
+\end{center}
+
+\noindent
+Predicting rainfall a day in advance holds considerable importance for agriculture, water resource management, and disaster preparedness. This project presents a web-based system designed to forecast whether it will rain the next day across various locations in Australia. The work relies on a publicly available weather dataset containing approximately 145,000 daily records from 49 weather stations, collected over a span of roughly ten years. Each record captures measurements such as temperature, humidity, wind speed and direction, atmospheric pressure, cloud cover, and whether rainfall occurred on that day.
+
+Before training any model, the data required thorough preprocessing. Missing values were handled using appropriate imputation methods, extreme outliers were capped based on interquartile ranges, and categorical variables like wind direction and location were encoded into numerical form. Since rainy days account for only about a fifth of the dataset, the training set was balanced using an oversampling technique known as SMOTE.
+
+Seven classifiers were trained and evaluated, including CatBoost, XGBoost, Random Forest, and others. Among these, CatBoost delivered the strongest performance in terms of both accuracy and the ability to correctly identify rainy days. The final model was deployed through a Flask web application, allowing users to input weather details for any of the 49 stations and receive a prediction within seconds.
+
+\end{document}
