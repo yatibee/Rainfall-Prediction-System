@@ -1,0 +1,67 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{hyperref}
+\onehalfspacing
+
+\title{\LARGE\textbf{Weather Forecasting Using Historical Data Analysis}}
+\author{Yati Singh \\ Roll No.: E23CSEU1058 \\ CSET 431: Special Topics in Computer Science}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+  {\large\textbf{Literature Review}}
+\end{center}
+
+\vspace{0.5em}
+
+\section*{Introduction}
+
+Weather prediction has been studied for a long time, and rainfall is one of the hardest things to forecast accurately. Older methods relied on numerical weather prediction (NWP) models, which use physical equations to simulate the atmosphere. These models need a lot of computing power and often struggle with short-term, localised forecasts. Over the last decade, machine learning has offered a different approach. Instead of modelling atmospheric physics, these methods find patterns in historical weather data. This review covers some of the important work in this area, ranging from early statistical methods to modern ensemble techniques and deep learning.
+
+\section*{Statistical and Early Machine Learning Approaches}
+
+Before machine learning became popular in weather forecasting, statistical methods like logistic regression were commonly used for rainfall prediction. Logistic regression is simple and easy to interpret, and Hastie, Tibshirani, and Friedman (2009) covered these methods thoroughly in their well-known textbook. It works fine when the relationship between inputs and the outcome is roughly linear, but weather data rarely behaves that way, so its performance has limits.
+
+Gaussian Naive Bayes is another early method. It treats all input features as independent, which is not really true for weather variables like temperature and humidity that clearly affect each other. Even so, it is useful as a quick baseline. Support Vector Machines (SVMs), introduced by Boser, Guyon, and Vapnik (1992), do a better job by finding the best possible boundary between classes in high-dimensional data. They have been used in rainfall classification with decent results, especially when the number of features is manageable.
+
+Overall, these classical models are reasonable starting points, but they struggle with the complex, nonlinear patterns that weather data usually contains.
+
+\section*{Ensemble Methods and Gradient Boosting}
+
+A big step forward came with ensemble methods, especially tree-based ones. Random Forests combine many decision trees and average their outputs, which reduces overfitting and handles noisy data well. They can capture complex relationships between weather variables that simpler models miss.
+
+Gradient boosting pushed things further. Chen and Guestrin (2016) introduced XGBoost, which builds trees one by one, with each tree fixing the mistakes of the previous ones. It became one of the most popular algorithms in machine learning because of its strong accuracy and built-in protection against overfitting. For rainfall prediction, it consistently outperforms classical methods.
+
+Prokhorenkova et al.\ (2018) later introduced CatBoost, which is similar to XGBoost but handles categorical features directly without needing manual encoding. This matters a lot for weather data, where inputs like wind direction and location are categories. CatBoost also uses a technique called ordered boosting to make training more reliable. In comparisons, it performs at least as well as XGBoost on structured data and is often more convenient to use.
+
+\section*{Deep Learning Approaches}
+
+Deep learning has also been applied to rainfall prediction, mainly because weather data has a time-based structure that these models can use. Long Short-Term Memory (LSTM) networks, for example, can learn how conditions change over several days, which is something traditional models cannot do easily. This makes them useful for capturing patterns that build up over time before a rain event.
+
+Convolutional neural networks have also been explored for processing satellite images alongside weather data. These approaches can extract spatial patterns that numerical data alone might miss. However, deep learning models generally need more data and computing power than gradient boosting methods, and they are harder to explain. For now, ensemble methods like CatBoost and XGBoost are still the more practical choice for structured weather datasets.
+
+\section*{Handling Class Imbalance in Rainfall Data}
+
+A common problem in rainfall prediction is that dry days greatly outnumber rainy ones. In the Rain in Australia dataset, only about 22\% of days have recorded rainfall. A model that always predicts ``no rain'' would still get around 78\% accuracy, which sounds good but is not actually useful.
+
+To fix this, researchers use techniques like SMOTE (Synthetic Minority Over-sampling Technique), which creates extra synthetic examples of the minority class to balance the training data. This helps the model pay proper attention to rainy days. Other methods include adjusting class weights or using metrics like AUC, precision, recall, and F1-score instead of simple accuracy. Getting the class balance right is a necessary step --- without it, most models will simply ignore the rare but important rainy-day cases.
+
+\section*{Summary}
+
+The field of rainfall prediction using machine learning has come a long way. Early statistical models laid the groundwork but had clear limitations with complex data. Ensemble methods, especially XGBoost and CatBoost, improved things significantly by handling nonlinear patterns and categorical features more effectively. Deep learning has added value for time-based prediction, though it is not yet the standard choice for tabular datasets. Across all methods, handling class imbalance properly has proven to be essential. Based on the available research, gradient boosting methods currently provide the best mix of accuracy, speed, and ease of use for next-day rainfall prediction.
+
+\section*{References}
+
+\begin{enumerate}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+  \item Boser, B., Guyon, I., \& Vapnik, V. (1992). A training algorithm for optimal margin classifiers. \textit{Proceedings of the 5th Annual ACM Workshop on Computational Learning Theory (COLT)}, 144--152.
+  \item Chen, T., \& Guestrin, C. (2016). XGBoost: A scalable tree boosting system. \textit{Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}, 785--794.
+  \item Hastie, T., Tibshirani, R., \& Friedman, J. (2009). \textit{The Elements of Statistical Learning: Data Mining, Inference, and Prediction} (2nd ed.). Springer.
+  \item Prokhorenkova, L., Gusev, G., Vorobev, A., Dorogush, A. V., \& Gulin, A. (2018). CatBoost: Unbiased boosting with categorical features. \textit{Advances in Neural Information Processing Systems (NeurIPS)}, 31, 6638--6648.
+\end{enumerate}
+
+\end{document}
